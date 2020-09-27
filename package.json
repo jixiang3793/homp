@@ -1,6 +1,6 @@
 {
   "name": "@hezhi/hzvue",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build --report --target lib --name hzvue ./src/index.js",
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wuruoyun/vue-component-lib-starter.git"
+    "url": "https://github.com/jixiang255/hezhi-vue-comps.git"
   },
   "config": {
     "commitizen": {
