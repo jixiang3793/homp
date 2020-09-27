@@ -1,14 +1,17 @@
 {
-  "name": "my-lib",
-  "version": "0.1.0",
+  "name": "@hezhi/hzvue",
+  "version": "0.0.0-development",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --report --target lib --name my-lib ./src/index.js",
+    "build": "vue-cli-service build --report --target lib --name hzvue ./src/index.js",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
-    "docs:dev": "vuepress dev docs"
+    "docs:dev": "vuepress dev docs",
+    "remote-release": "semantic-release --no-ci",
+    "local-release": "semantic-release --dry-run --no-ci",
+    "commit": "cz"
   },
-  "main": "dist/my-lib.umd.min.js",
+  "main": "dist/hzvue.umd.min.js",
   "files": [
     "src",
     "assets",
@@ -20,20 +23,34 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@vue/babel-preset-app": "^4.4.6",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-eslint": "^4.4.6",
     "@vue/cli-service": "^4.4.6",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
+    "semantic-release": "^17.1.2",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.5.2"
   },
   "peerDependencies": {
     "moment": "^2.27.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuruoyun/vue-component-lib-starter.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

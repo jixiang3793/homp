@@ -1,4 +1,4 @@
-import * as mylib from 'my-lib'
+import * as mylib from 'hzvue'
 import '../../assets/main.css'
 
 export default ({

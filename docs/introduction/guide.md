@@ -11,21 +11,21 @@ If you are using module bundlers such as Webpack, you can directly include packa
 NPM:
 
 ``` bash
-$ npm install my-lib --save
+$ npm install hzvue --save
 ```
 
 or Yarn:
 
 ``` bash
-$ yarn add my-lib
+$ yarn add hzvue
 ```
 
-Then register `my-lib` components and directives all at once in your app's entry:
+Then register `hzvue` components and directives all at once in your app's entry:
 
 ``` js
 // main.js
 import Vue from 'vue'
-import * as mylib from 'my-lib'
+import * as mylib from 'hzvue'
 
 Vue.use(mylib)
 ```

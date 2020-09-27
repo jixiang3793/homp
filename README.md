@@ -38,7 +38,7 @@ Besides the `install` function, [index.js](src/index.js) may also exports mixins
 
 ```js
 <script>
-import { MyMixin, MyConstants, MyUtil } from 'my-lib'
+import { MyMixin, MyConstants, MyUtil } from 'hzvue'
 
 export default {
   mixins: [MyMixin],
@@ -63,7 +63,7 @@ If your component library contains a set of styles used by all components, you m
 To use the global style in client app, including the components defined by the client app, import it in your `main.js`:
 
 ```js
-import 'my-lib/assets/main.css'
+import 'hzvue/assets/main.css'
 ```
 
 If you want to avoid conflicting with other global styles, consider pre-fix your classes in your style, or wrap them into a namespace class.
@@ -87,7 +87,7 @@ module.exports = {
 }
 ```
 
-In your client app, you don't need to explicitly add dependency to `moment` in `package.json` as it is a dependency of `my-lib`. However, if you want to reduce the size of the bundle size of client app, add the following in the `vue.config.js` of client app ([details](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack)), assuming it is also built with Vue CLI .
+In your client app, you don't need to explicitly add dependency to `moment` in `package.json` as it is a dependency of `hzvue`. However, if you want to reduce the size of the bundle size of client app, add the following in the `vue.config.js` of client app ([details](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack)), assuming it is also built with Vue CLI .
 
 ```js
 const webpack = require('webpack')
@@ -124,7 +124,7 @@ If your app is not using a bundler, the following is the example of how to use t
   <head>
     <title>Demo app</title>
     <link rel="stylesheet" href="assets/main.css">
-    <link rel="stylesheet" href="dist/my-lib.css">
+    <link rel="stylesheet" href="dist/hzvue.css">
   </head>
   <body>
     <div id="app">
@@ -135,9 +135,9 @@ If your app is not using a bundler, the following is the example of how to use t
 
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/moment"></script>
-  <script src="dist/my-lib.umd.js"></script>
+  <script src="dist/hzvue.umd.js"></script>
   <script>
-      console.log(window['my-lib'])
+      console.log(window['hzvue'])
       var app = new Vue({
         el: '#app',
         methods: {

@@ -23,6 +23,7 @@ module.exports = {
         collapsable: false,
         children: [
           'components/component-a',
+          'components/H3DCarousel',
           'components/component-b'
         ]
       }
@@ -31,7 +32,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'my-lib': resolve(__dirname, '../../src')
+        'hzvue': resolve(__dirname, '../../src')
       }
     }
   }
