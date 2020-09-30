@@ -1,8 +1,8 @@
-# carousel
+# SlideCode
 
 ## Example
 
-<h-3-d-carousel/>
+<slide-code />
 
 ## Props
 

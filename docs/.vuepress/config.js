@@ -1,30 +1,32 @@
-const { resolve } = require('path')
+const { resolve } = require("path");
 
 module.exports = {
-  base: '/',
-  title: 'My Library',
-  description: 'Just playing around',
+  base: "/",
+  title: "My Library",
+  description: "Just playing around",
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Components', link: '/components/' },
-      { text: 'Github', link: 'https://github.com/wuruoyun/vue-component-lib-starter' },
+      { text: "Home", link: "/" },
+      { text: "Components", link: "/components/" },
+      {
+        text: "Github",
+        link: "https://github.com/wuruoyun/vue-component-lib-starter"
+      }
     ],
     sidebar: [
       {
-        title: 'Introduction',
+        title: "Introduction",
         collapsable: false,
-        children: [
-          'introduction/guide'
-        ]
+        children: ["introduction/guide"]
       },
       {
-        title: 'Components',
+        title: "Components",
         collapsable: false,
         children: [
-          'components/component-a',
-          'components/H3DCarousel',
-          'components/component-b'
+          "components/component-a",
+          "components/H3DCarousel",
+          "components/SlideCode",
+          "components/component-b"
         ]
       }
     ]
@@ -32,8 +34,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'hzvue': resolve(__dirname, '../../src')
+        hzvue: resolve(__dirname, "../../src")
       }
     }
   }
-}
+};

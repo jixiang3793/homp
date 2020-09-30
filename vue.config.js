@@ -1,7 +1,8 @@
 module.exports = {
   chainWebpack: config => {
     config.externals({
-      moment: 'moment'
-    })
-  }
-}
+      moment: "moment"
+    });
+  },
+  productionSourceMap: false
+};

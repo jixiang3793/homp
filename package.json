@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --report --target lib --name hzvue ./src/index.js",
+    "build": "vue-cli-service build --target lib --name hzvue ./src/index.js",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
     "remote-release": "semantic-release --no-ci",
-    "local-release": "semantic-release --dry-run --no-ci",
+    "local-release": "GH_TOKEN=f94b59b8f1016cfbdbf63ebc19c820c877884d9a NPM_TOKEN=7cc5909f-79ec-4bd4-bd3a-fe4484a5a5fc semantic-release --dry-run --no-ci",
     "commit": "cz"
   },
   "main": "dist/hzvue.umd.min.js",
@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.15",
+    "stackblur-canvas": "^2.4.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
