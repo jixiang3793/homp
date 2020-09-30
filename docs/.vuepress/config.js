@@ -23,10 +23,9 @@ module.exports = {
         title: "Components",
         collapsable: false,
         children: [
-          "components/component-a",
           "components/H3DCarousel",
           "components/SlideCode",
-          "components/component-b"
+          "components/IdiomCode"
         ]
       }
     ]

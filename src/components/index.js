@@ -1,6 +1,5 @@
-import ComponentA from "./ComponentA.vue";
-import ComponentB from "./ComponentB.vue";
 import H3DCarousel from "./H3DCarousel.vue";
 import SlideCode from "./SlideCode.vue";
+import IdiomCode from "./IdiomCode.vue";
 
-export { ComponentA, ComponentB, H3DCarousel, SlideCode };
+export { H3DCarousel, SlideCode, IdiomCode };

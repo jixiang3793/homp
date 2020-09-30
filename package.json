@@ -13,9 +13,7 @@
   },
   "main": "dist/hzvue.umd.min.js",
   "files": [
-    "src",
-    "assets",
-    "dist/*.{js,css}"
+    "dist"
   ],
   "dependencies": {
     "lodash": "^4.17.15",
