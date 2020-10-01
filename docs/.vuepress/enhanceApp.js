@@ -1,5 +1,4 @@
-import * as mylib from 'hzvue'
-import '../../assets/main.css'
+import * as hzvue from "hzvue";
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -7,5 +6,5 @@ export default ({
   router, // the router instance for the app
   siteData // site metadata
 }) => {
-  Vue.use(mylib)
-}
+  Vue.use(hzvue);
+};

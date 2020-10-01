@@ -2,15 +2,15 @@ const { resolve } = require("path");
 
 module.exports = {
   base: "/",
-  title: "My Library",
-  description: "Just playing around",
+  title: "hezhi vue",
+  description: "Just commonly used conponent",
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
       { text: "Components", link: "/components/" },
       {
         text: "Github",
-        link: "https://github.com/wuruoyun/vue-component-lib-starter"
+        link: "https://github.com/jixiang255/hezhi-vue-comps.git"
       }
     ],
     sidebar: [

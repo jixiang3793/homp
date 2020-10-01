@@ -1,14 +1,22 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: /logo.png
 actionText: Get Started →
 actionLink: /introduction/guide
-features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT Licensed | Copyright © 2018-present <My org>
+footer: MIT Licensed | Copyright © 2020-present
 ---
+
+<div class="features">
+  <div class="feature">
+    <h2>3D视频轮播组件</h2>
+    <img src="/carousel.png">
+  </div>
+  <div class="feature">
+    <h2>滑动验证码组件</h2>
+    <img src="/slidecode.png">
+  </div>
+  <div class="feature">
+    <h2>语意验证码组件</h2>
+    <img src="/idiomcode.png">
+  </div>
+</div>
