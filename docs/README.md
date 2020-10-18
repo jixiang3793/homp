@@ -9,7 +9,7 @@ footer: MIT Licensed | Copyright © 2020-present
 <div class="features">
   <div class="feature">
     <h2>3D视频轮播组件</h2>
-    <img src="/carousel.png">
+    <img src="/carousel.jpg">
   </div>
   <div class="feature">
     <h2>滑动验证码组件</h2>

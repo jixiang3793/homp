@@ -10,7 +10,7 @@
       :style="{
         left: 'calc(50% - ' + imgWidth / 2 + 'px)',
         top: 'calc(50% - 10px)',
-        transform: calcBtnTrans()
+        transform: calcBtnTrans(),
       }"
     >
       上一步
@@ -21,7 +21,7 @@
       :style="{
         left: 'calc(50% + ' + (imgWidth / 2 - 56) + 'px)',
         top: 'calc(50% - 10px)',
-        transform: calcBtnTrans()
+        transform: calcBtnTrans(),
       }"
     >
       下一步
@@ -36,7 +36,7 @@
         height: imgWidth * options.ratio + 'px',
         left: 'calc(50% - ' + imgWidth / 2 + 'px)',
         top: 'calc(50% - ' + (imgWidth * options.ratio) / 2 + 'px)',
-        transform: calcTrans(index)
+        transform: calcTrans(index),
       }"
     >
       <button @click="play = true">播放</button>
@@ -64,27 +64,27 @@
  * 以此类推
  */
 export default {
-  name: "h-3d-carousel",
+  name: 'h-3d-carousel',
   props: {
     images: {
       type: Array,
       default: () => [
-        "/school2.jpg",
-        "/school2.jpg",
-        "/school2.jpg",
-        "/school2.jpg",
-        "/school2.jpg"
-      ]
+        '/bg1.jpg',
+        '/bg2.jpg',
+        '/bg3.jpg',
+        '/school2.jpg',
+        '/school2.jpg',
+      ],
     },
     videos: {
       type: Array,
       default: () => [
-        "/sintel.mp4",
-        "/sintel.mp4",
-        "/sintel.mp4",
-        "/sintel.mp4",
-        "/sintel.mp4"
-      ]
+        '/sintel.mp4',
+        '/sintel.mp4',
+        '/sintel.mp4',
+        '/sintel.mp4',
+        '/sintel.mp4',
+      ],
     },
     options: {
       type: Object,
@@ -92,9 +92,9 @@ export default {
         autoplay: false,
         showArrows: true,
         showNum: 3,
-        ratio: 3 / 4
-      })
-    }
+        ratio: 3 / 4,
+      }),
+    },
   },
   computed: {},
   mounted() {
@@ -108,18 +108,18 @@ export default {
   data() {
     return {
       colors: [
-        "aliceblue",
-        "antiquewhite",
-        "aqua",
-        "aquamarine",
-        "black",
-        "blue",
-        "red",
-        "green"
+        'aliceblue',
+        'antiquewhite',
+        'aqua',
+        'aquamarine',
+        'black',
+        'blue',
+        'red',
+        'green',
       ],
       pos: 0,
       imgWidth: 400,
-      play: false
+      play: false,
     };
   },
   methods: {
@@ -133,17 +133,17 @@ export default {
     },
     calcBtnTrans() {
       if (this.options.showNum === 1) {
-        return "translateZ(11px)";
+        return 'translateZ(11px)';
       } else {
-        return "translateZ(151px)";
+        return 'translateZ(151px)';
       }
     },
     calcTrans(index) {
       if (this.pos === index) {
         if (this.options.showNum === 1) {
-          return "translateZ(10px)";
+          return 'translateZ(10px)';
         } else {
-          return "translateZ(150px)";
+          return 'translateZ(150px)';
         }
       }
 
@@ -151,33 +151,37 @@ export default {
 
       if (result > 0) {
         if (result <= (this.options.showNum - 1) / 2) {
-          return `translateX(${(this.imgWidth / 2) *
-            Math.abs(result)}px) translateZ(100px) rotateY(-30deg)`;
+          return `translateX(${
+            (this.imgWidth / 2) * Math.abs(result)
+          }px) translateZ(100px) rotateY(-30deg)`;
         } else {
           result = Math.abs(result - this.videos.length);
           if (result <= (this.options.showNum - 1) / 2) {
-            return `translateX(-${(this.imgWidth / 2) *
-              Math.abs(result)}px) translateZ(100px) rotateY(30deg)`;
+            return `translateX(-${
+              (this.imgWidth / 2) * Math.abs(result)
+            }px) translateZ(100px) rotateY(30deg)`;
           } else {
             return null;
           }
         }
       } else {
         if (-((this.options.showNum - 1) / 2) <= result) {
-          return `translateX(-${(this.imgWidth / 2) *
-            Math.abs(result)}px) translateZ(100px) rotateY(30deg)`;
+          return `translateX(-${
+            (this.imgWidth / 2) * Math.abs(result)
+          }px) translateZ(100px) rotateY(30deg)`;
         } else {
           result = Math.abs(result + this.videos.length);
           if (result <= (this.options.showNum - 1) / 2) {
-            return `translateX(${(this.imgWidth / 2) *
-              Math.abs(result)}px) translateZ(100px) rotateY(-30deg)`;
+            return `translateX(${
+              (this.imgWidth / 2) * Math.abs(result)
+            }px) translateZ(100px) rotateY(-30deg)`;
           } else {
             return null;
           }
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
