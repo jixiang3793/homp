@@ -7,8 +7,8 @@
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
-    "remote-release": "GH_TOKEN=429fef5963888da560d2c818da4c17517d1f8ec0 NPM_TOKEN=7cc5909f-79ec-4bd4-bd3a-fe4484a5a5fc semantic-release --no-ci",
-    "local-release": "GH_TOKEN=429fef5963888da560d2c818da4c17517d1f8ec0 NPM_TOKEN=7cc5909f-79ec-4bd4-bd3a-fe4484a5a5fc semantic-release --dry-run --no-ci",
+    "remote-release": "semantic-release --no-ci",
+    "local-release": "semantic-release --dry-run --no-ci",
     "commit": "cz"
   },
   "main": "dist/homp.umd.min.js",
