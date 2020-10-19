@@ -4,7 +4,7 @@
 
 > Create your own component library with [Vue CLI 3](https://cli.vuejs.org/) and [VuePress](https://vuepress.vuejs.org/).
 
-Sooner or later, you will find that creating a component library is much better than having all components inside your app project. A component library force you remove app specific logic from your components, makes it possible to reuse them in other apps. 
+Sooner or later, you will find that creating a component library is much better than having all components inside your app project. A component library force you remove app specific logic from your components, makes it possible to reuse them in other apps.
 
 Once the components are in a libraray, documentation becomes critical. This starter project includes a documentation app powered by VuePress. It not only documents the usage of the component, but also provides a testing bed during the development of components. See the generated documentation app [here](https://sharp-babbage-154f0a.netlify.com/).
 
@@ -12,7 +12,7 @@ Once the components are in a libraray, documentation becomes critical. This star
 
 ## Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -38,7 +38,7 @@ Besides the `install` function, [index.js](src/index.js) may also exports mixins
 
 ```js
 <script>
-import { MyMixin, MyConstants, MyUtil } from 'hzvue'
+import { MyMixin, MyConstants, MyUtil } from 'homp'
 
 export default {
   mixins: [MyMixin],
@@ -63,7 +63,7 @@ If your component library contains a set of styles used by all components, you m
 To use the global style in client app, including the components defined by the client app, import it in your `main.js`:
 
 ```js
-import 'hzvue/assets/main.css'
+import "homp/assets/main.css";
 ```
 
 If you want to avoid conflicting with other global styles, consider pre-fix your classes in your style, or wrap them into a namespace class.
@@ -79,25 +79,25 @@ One strategy is to make it external. As an example, the popular library [moment]
 ```js
 module.exports = {
   //...
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.externals({
-      moment: 'moment'
-    })
-  }
-}
+      moment: "moment",
+    });
+  },
+};
 ```
 
-In your client app, you don't need to explicitly add dependency to `moment` in `package.json` as it is a dependency of `hzvue`. However, if you want to reduce the size of the bundle size of client app, add the following in the `vue.config.js` of client app ([details](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack)), assuming it is also built with Vue CLI .
+In your client app, you don't need to explicitly add dependency to `moment` in `package.json` as it is a dependency of `homp`. However, if you want to reduce the size of the bundle size of client app, add the following in the `vue.config.js` of client app ([details](https://github.com/jmblog/how-to-optimize-momentjs-with-webpack)), assuming it is also built with Vue CLI .
 
 ```js
-const webpack = require('webpack')
+const webpack = require("webpack");
 module.exports = {
   //...
   plugins: [
     // Ignore all locale files of moment.js
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
-}
+};
 ```
 
 #### Cherry picking
@@ -107,7 +107,7 @@ Another strategy is to embed cherry-picked functions with tree shaking. As an ex
 To get the tree shaking working, import the `fill` function like the following. Note that `import { fill } from 'lodash'` or `import _ from 'lodash'` will not work and will embed the whole `lodash` library.
 
 ```js
-import fill from 'lodash/fill'
+import fill from "lodash/fill";
 ```
 
 If your client app also use `lodash` and you don't want `lodash` to be in both the client app and the component libraries, even after cherry-picking, you may consider cherry picking in component library and re-export them as utils for client to consume, so that the client does not need to depend on `lodash`, therefore avoiding duplication.
@@ -123,29 +123,29 @@ If your app is not using a bundler, the following is the example of how to use t
 <html>
   <head>
     <title>Demo app</title>
-    <link rel="stylesheet" href="assets/main.css">
-    <link rel="stylesheet" href="dist/hzvue.css">
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="dist/homp.css" />
   </head>
   <body>
     <div id="app">
-      <p>Component A: <component-a/></p>
-      <p>Component B: <component-b @click="onClick"/></p>
+      <p>Component A: <component-a /></p>
+      <p>Component B: <component-b @click="onClick" /></p>
     </div>
   </body>
 
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/moment"></script>
-  <script src="dist/hzvue.umd.js"></script>
+  <script src="dist/homp.umd.js"></script>
   <script>
-      console.log(window['hzvue'])
-      var app = new Vue({
-        el: '#app',
-        methods: {
-          onClick (message) {
-            alert(message)
-          }
-        }
-      })
-    </script>
+    console.log(window["homp"]);
+    var app = new Vue({
+      el: "#app",
+      methods: {
+        onClick(message) {
+          alert(message);
+        },
+      },
+    });
+  </script>
 </html>
 ```

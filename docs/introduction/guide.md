@@ -10,24 +10,24 @@ If you are using module bundlers such as Webpack, you can directly include packa
 
 NPM:
 
-``` bash
-$ npm install hzvue --save
+```bash
+$ npm install homp --save
 ```
 
 or Yarn:
 
-``` bash
-$ yarn add hzvue
+```bash
+$ yarn add homp
 ```
 
-Then register `hzvue` components and directives all at once in your app's entry:
+Then register `homp` components and directives all at once in your app's entry:
 
-``` js
+```js
 // main.js
-import Vue from 'vue'
-import * as mylib from 'hzvue'
+import Vue from "vue";
+import * as mylib from "homp";
 
-Vue.use(mylib)
+Vue.use(mylib);
 ```
 
 ## i18n

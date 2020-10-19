@@ -33,7 +33,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        hzvue: resolve(__dirname, "../../src")
+        homp: resolve(__dirname, "../../src")
       }
     }
   }

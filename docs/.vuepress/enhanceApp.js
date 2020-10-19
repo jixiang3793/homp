@@ -1,4 +1,4 @@
-import * as hzvue from "hzvue";
+import * as homp from "homp";
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -6,5 +6,5 @@ export default ({
   router, // the router instance for the app
   siteData // site metadata
 }) => {
-  Vue.use(hzvue);
+  Vue.use(homp);
 };

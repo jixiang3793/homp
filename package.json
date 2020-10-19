@@ -1,9 +1,9 @@
 {
-  "name": "@hezhi/hzvue",
+  "name": "@hezhi/homp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --target lib --name hzvue ./src/index.js",
+    "build": "vue-cli-service build --target lib --name homp ./src/index.js",
     "lint": "vue-cli-service lint",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
@@ -11,7 +11,7 @@
     "local-release": "semantic-release --dry-run --no-ci",
     "commit": "cz"
   },
-  "main": "dist/hzvue.umd.min.js",
+  "main": "dist/homp.umd.min.js",
   "files": [
     "dist"
   ],
