@@ -25,6 +25,7 @@ module.exports = {
         children: [
           "components/H3DCarousel",
           "components/SlideCode",
+          "components/SkuItems",
           "components/IdiomCode"
         ]
       }

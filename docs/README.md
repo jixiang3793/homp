@@ -19,4 +19,8 @@ footer: MIT Licensed | Copyright © 2020-present
     <h2>语意验证码组件</h2>
     <img src="/idiomcode.png">
   </div>
+  <div class="feature">
+    <h2>物品选择组件</h2>
+    <img src="/skuitems.png">
+  </div>
 </div>
