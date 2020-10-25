@@ -26,6 +26,7 @@ module.exports = {
           "components/H3DCarousel",
           "components/SlideCode",
           "components/SkuItems",
+          "components/CropImage",
           "components/IdiomCode"
         ]
       }
