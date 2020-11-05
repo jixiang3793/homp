@@ -23,4 +23,8 @@ footer: MIT Licensed | Copyright © 2020-present
     <h2>物品选择组件</h2>
     <img src="/skuitems.png">
   </div>
+  <div class="feature">
+    <h2>无规则切图组件</h2>
+    <img src="/cropimage.png">
+  </div>
 </div>

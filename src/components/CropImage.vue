@@ -59,8 +59,8 @@ export default {
     // this.calc();
     this.stage = new Konva.Stage({
       container: "container",
-      width: 600,
-      height: 800
+      width: 400,
+      height: 600
     });
     this.layer = new Konva.Layer();
     this.stage.add(this.layer);
