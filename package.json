@@ -16,9 +16,12 @@
     "dist"
   ],
   "dependencies": {
+    "konva": "^7.1.4",
     "lodash": "^4.17.15",
     "stackblur-canvas": "^2.4.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.12",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
