@@ -3,6 +3,7 @@
     <div>
       <div>
         <div id="container"></div>
+        <div id="crop" style="display:none"></div>
       </div>
       <div>
         <button type="button" @click="choose">选择图片</button>
@@ -36,6 +37,7 @@
 4.
 */
 import Konva from "konva";
+console.log(Konva, Konva.Stage);
 
 export default {
   data: () => ({
@@ -55,12 +57,12 @@ export default {
   }),
   mounted() {
     // this.calc();
-    this.stage = new Konva.stage({
+    this.stage = new Konva.Stage({
       container: "container",
       width: 600,
       height: 800
     });
-    this.layer = new Konva.layer();
+    this.layer = new Konva.Layer();
     this.stage.add(this.layer);
   },
   methods: {
@@ -79,7 +81,7 @@ export default {
         this.file = e.target.files[0];
         this.imgSrc = URL.createObjectURL(this.file);
         this.layer.destroyChildren();
-        Konva.Image.fromURL(this.imgSrc, function(darthNode) {
+        Konva.Image.fromURL(this.imgSrc, darthNode => {
           var group = new Konva.Group({
             x: 0,
             y: 0,
@@ -104,16 +106,8 @@ export default {
             });
             rect.on("dragstart", function(e) {
               console.log("rect e is {} ...", e);
-
-              // var pointId = e.target.attrs.id;
-              // var spoints = this.layer.find(`.rect`);
-              // // var node = this.layer.findOne(`#${pointId}`);
-              // spoints[pointId].x(this.points[pointId].x);
-              // spoints[pointId].y(this.points[pointId].y);
-              // this.points[pointId].x = e.target.attrs.x;
-              // this.points[pointId].y = e.target.attrs.y;
             });
-            rect.on("dragend", function(e) {
+            rect.on("dragend", e => {
               console.log("rect e is {} ...", e);
               e.evt.cancelBubble = true;
               var pointId = e.target.attrs.id;
@@ -126,13 +120,13 @@ export default {
               var node2 = this.layer.findOne(`#point${prev}_point${pointId}`);
               // setTimeout(() => {
 
-              node1.this.points([
+              node1.points([
                 this.points[pointId].x,
                 this.points[pointId].y,
                 this.points[next].x,
                 this.points[next].y
               ]);
-              node2.this.points([
+              node2.points([
                 this.points[prev].x,
                 this.points[prev].y,
                 this.points[pointId].x,
@@ -165,7 +159,7 @@ export default {
             opacity: 0.5
             // draggable: true,
           });
-          group.on("dragend", function(e) {
+          group.on("dragend", e => {
             console.log("group e is {} ...", e);
             this.groupClip.draw();
             this.layer.draw();
@@ -173,7 +167,7 @@ export default {
           this.groupClip = new Konva.Group({
             x: 0,
             y: 0,
-            clipFunc: function(ctx) {
+            clipFunc: ctx => {
               ctx.beginPath();
               // var spoints = this.layer.find(`.rect`);
               for (var i = 0; i < this.points.length; i++) {
@@ -230,12 +224,12 @@ export default {
         );
       }
       var max = Math.max(...pointsDis);
-      var crop = new Konva.stage({
+      var crop = new Konva.Stage({
         container: "crop",
         width: max,
         height: max
       });
-      var croplayer = new Konva.layer();
+      var croplayer = new Konva.Layer();
       croplayer.add(this.groupClip.clone());
       crop.add(croplayer);
       this.cropImageUrl = crop.toDataURL();
