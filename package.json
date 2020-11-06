@@ -19,6 +19,7 @@
     "konva": "^7.1.4",
     "lodash": "^4.17.15",
     "stackblur-canvas": "^2.4.0",
+    "tesseract.js": "^2.1.4",
     "vue": "^2.6.12",
     "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
