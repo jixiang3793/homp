@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex;">
+  <div style="display: flex;align-items: center;">
     <div class="ocrtext-panel-left">
       <div>
         <button type="button" @click="panel = 'paste'">粘贴图片</button>
@@ -7,6 +7,9 @@
       </div>
       <div v-if="panel === 'paste'">
         <div autofocus="autofocus" class="ocrtext-input-img" @paste="paste">
+          <div v-show="!pasteImg">
+            图片
+          </div>
           <img :src="pasteImg" alt="" />
         </div>
       </div>
@@ -14,10 +17,14 @@
         <crop-image />
       </div>
     </div>
-    <div>
+    <div style="padding: 10px">
       <button type="button" @click="ocr">ocr</button>
+      <div>{{ progress }}</div>
     </div>
-    <div class="ocrtext-panel-right">
+    <div class="ocrtext-panel-right ocrtext-input-img">
+      <div v-show="!resultText">
+        ocr结果
+      </div>
       <div class="ocrtext-panel-result">{{ resultText }}</div>
     </div>
   </div>
@@ -31,13 +38,19 @@ export default {
     panel: "paste",
     pasteImg: null,
     worker: null,
-    resultText: ""
+    resultText: "",
+    progress: 0
   }),
   mounted() {
     // this.calc();
     this.worker = createWorker({
+      workerPath: "/tesseract/worker.min.js",
       langPath: "/lang-data",
-      logger: m => console.log(m)
+      corePath: "/tesseract/tesseract-core.wasm.js",
+      logger: m => {
+        console.log(m);
+        this.progress = m.progress.toFixed(4) * 100 + "%";
+      }
     });
   },
   methods: {
@@ -73,5 +86,7 @@ export default {
   width: 300px;
   height: 200px;
   border: 1px #eee solid;
+  color: #aaa;
+  text-align: center;
 }
 </style>
