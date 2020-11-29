@@ -27,4 +27,8 @@ footer: MIT Licensed | Copyright © 2020-present
     <h2>无规则切图组件</h2>
     <img src="/cropimage.png">
   </div>
+  <div class="feature">
+    <h2>ocr组件</h2>
+    <img src="/ocrtext.png">
+  </div>
 </div>
