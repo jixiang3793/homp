@@ -13,7 +13,7 @@ footer: MIT Licensed | Copyright © 2020-present
   </div>
   <div class="feature">
     <h2>滑动验证码组件</h2>
-    <img src="/slidecode.png">
+    <img src="/slidecode.jpg">
   </div>
   <div class="feature">
     <h2>语意验证码组件</h2>
@@ -25,10 +25,14 @@ footer: MIT Licensed | Copyright © 2020-present
   </div>
   <div class="feature">
     <h2>无规则切图组件</h2>
-    <img src="/cropimage.png">
+    <img src="/cropimage.jpg">
   </div>
   <div class="feature">
     <h2>ocr组件</h2>
     <img src="/ocrtext.png">
+  </div>
+  <div class="feature">
+    <h2>物体检测组件</h2>
+    <img src="/detectobject.jpg">
   </div>
 </div>
