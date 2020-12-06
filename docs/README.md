@@ -35,4 +35,8 @@ footer: MIT Licensed | Copyright © 2020-present
     <h2>物体检测组件</h2>
     <img src="/detectobject.jpg">
   </div>
+  <div class="feature">
+    <h2>人脸活体组件</h2>
+    <img src="/facealive.jpg">
+  </div>
 </div>

@@ -27,6 +27,7 @@ module.exports = {
           "components/SlideCode",
           "components/SkuItems",
           "components/CropImage",
+          "components/FaceAlive",
           "components/DetectObject",
           "components/OcrText",
           "components/IdiomCode"
